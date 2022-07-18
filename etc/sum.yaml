@@ -1,0 +1,10 @@
+Name: sum.rpc
+ListenOn: 127.0.0.1:8080
+Gateway:
+  Name: gateway
+  Port: 8081
+  Upstreams:
+    - Grpc:
+        Endpoints:
+          - localhost:8080
+      ProtoSet: sum.pb
