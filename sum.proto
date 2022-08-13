@@ -3,13 +3,11 @@ syntax = "proto3";
 package sum;
 option go_package="./pb";
 
-message Numbers {
-    int64 a = 1;
-    int64 b = 2;
-}
+import "google/api/annotations.proto";
 
 message SumRequest {
-    Numbers numbers =1;
+    int64 a = 1;
+    int64 b = 2;
 }
 
 message SumResponse {
@@ -17,6 +15,11 @@ message SumResponse {
 }
 
 service Sum {
-    rpc Add(SumRequest) returns (SumResponse) {}
+    rpc Add(SumRequest) returns (SumResponse) {
+		option (google.api.http) = {
+			post: "/v1/sum"
+			body: "*"
+		};
+	}
 }
 

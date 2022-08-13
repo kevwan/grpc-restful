@@ -5,7 +5,6 @@ import (
 
 	"github.com/kevwan/grpc-restful/internal/svc"
 	"github.com/kevwan/grpc-restful/pb"
-
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
@@ -25,6 +24,6 @@ func NewAddLogic(ctx context.Context, svcCtx *svc.ServiceContext) *AddLogic {
 
 func (l *AddLogic) Add(in *pb.SumRequest) (*pb.SumResponse, error) {
 	return &pb.SumResponse{
-		Result: in.Numbers.A+in.Numbers.B,
+		Result: in.A + in.B,
 	}, nil
 }

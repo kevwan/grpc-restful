@@ -13,7 +13,6 @@ import (
 )
 
 type (
-	Numbers     = pb.Numbers
 	SumRequest  = pb.SumRequest
 	SumResponse = pb.SumResponse
 

@@ -4,7 +4,9 @@ Gateway:
   Name: gateway
   Port: 8081
   Upstreams:
-    - Grpc:
+    - Name: rpc-server
+      Grpc:
         Endpoints:
           - localhost:8080
-      ProtoSet: sum.pb
+      ProtoSets:
+        - sum.pb
